@@ -1,0 +1,10 @@
+http://localhost:3000/login
+
+
+http://localhost:3000/chat
+
+Terminal:::::::::
+cd nodeServer    (press tab ....and then enter)
+npm run serve
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <!-- <link rel="stylesheet" href="Style/chatStyle.css"> -->
+    <link rel="stylesheet" href="purple.css">
+    <script defer src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+
+<body>
+    <nav class='navbar'>
+        <button id='burger'>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
+    </nav>
+    <div class="mainContainer">
+        <div class="left">
+            <div class="upperL">
+                <div class="room"># dream</div>
+                <hr>
+                <div class="user">
+                    <ul>
+                        <li>Username</li>
+                        <li class='uname'>Akshata</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+
+            <div class="lbtn">
+                <button id='cTheme'>Green Theme</button>
+                <button class='btn-vis' id='location2' type="submit">Location</button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="displayMessage">
+
+            </div>
+            <div class="send">
+                <input type="text" class="text" id='messageInp' placeholder="Write a message...">
+                <div class="button">
+                    <button class='btn' id="sendMsg">Send</button>
+                    <button class='btn btn-lg' id='location1' type="submit">Location</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/nodeServer/index.js"></script> -->
+    <script src="change.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
+</body>
+
+</html>
