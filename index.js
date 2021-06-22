@@ -18,7 +18,7 @@ let roomNumber;
 app.use(express.static(path.join(__dirname, '/static')));
 const users = [];
 
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     // console.log('Successfully connected to Login.html');
     res.sendFile(path.join(__dirname + '/static/login.html'));
 });
