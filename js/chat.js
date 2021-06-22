@@ -8,7 +8,4 @@ window.onload = function () {
     name1 = data[1];
     room = data[2];
     user.push(name1);
-    console.log(name1);
-    console.log(room);
 }
-console.log(user);
