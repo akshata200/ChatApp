@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is project on attempt to make an chat application",
   "main": "index.js",
-  "heroku git":"remote -a chatappmaster",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
