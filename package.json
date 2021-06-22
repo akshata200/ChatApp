@@ -4,6 +4,7 @@
   "description": "This is project on attempt to make an chat application",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon server.js"
   },
