@@ -2,7 +2,7 @@
 //  and get display message body and message input from here
 
 console.log('Joined to client');
-const socket = io('http://localhost:3000');
+const socket = io();
 let displayMessage = document.querySelector('.displayMessage');
 let messageInp = document.getElementById('messageInp');
 let sendMsg = document.getElementById('sendMsg');
