@@ -8,11 +8,11 @@ changeTheme.addEventListener('click', () => {
     console.log(themeLink);
     console.log(themeLink.href);
     console.log(changeTheme.innerText);
-    if (themeLink.href == 'http://localhost:3000/green.css') {
-        themeLink.href = 'http://localhost:3000/purple.css';
+    if (themeLink.href == 'https://chatappmaster.herokuapp.com/green.css') {
+        themeLink.href = 'https://chatappmaster.herokuapp.com/purple.css';
         changeTheme.innerText = 'Green Theme';
-    } else if (themeLink.href == 'http://localhost:3000/purple.css') {
-        themeLink.href = 'http://localhost:3000/green.css';
+    } else if (themeLink.href == 'https://chatappmaster.herokuapp.com/purple.css') {
+        themeLink.href = 'https://chatappmaster.herokuapp.com/green.css';
         changeTheme.innerText = 'Purple Theme';
     }
 });
