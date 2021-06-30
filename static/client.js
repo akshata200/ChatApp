@@ -16,15 +16,10 @@ var audio = new Audio('ting.mp3');
 
 window.onload = function () {
     var url = document.location.href;
-    console.log(url);
     data = url.split('?')
-    console.log(data);
     params = data[1].split('&');
     username = params[0].split('=')[1];
     room = params[1].split('=')[1];
-    console.log(username, room);
-    console.log(Room);
-    console.log(UName);
     Room.innerHTML = `# ${room}`;
     UName.innerHTML = username
 }
@@ -40,16 +35,12 @@ const appendAnnounce = (message, position) => {
     displayMessage.append(messageElement);
 }
 const appendURL = (userName, locationLink, position) => {
-    // message announcement
-    // Its only for Announcement
+    // Its only for location
 
     const date = new Date();
     const Hour = date.getHours();
     const Min = date.getMinutes();
-    console.log(Hour, Min);
 
-
-    console.log('Add message');
     let elementMessage = document.createElement('div');
     elementMessage.classList.add('message');
     elementMessage.classList.add(position);
@@ -92,56 +83,57 @@ const appendURL = (userName, locationLink, position) => {
 
     displayMessage.scrollTop = displayMessage.scrollHeight - displayMessage.clientHeight;
 
-
-
-
 }
 
 
 const appendMessage = (userName, message, position) => {
     // message    msg-right msg-left announcement
-    const date = new Date();
-    const Hour = date.getHours();
-    const Min = date.getMinutes();
-    console.log(Hour, Min);
+
+    if (/\S/.test(message)) {
+
+        const date = new Date();
+        const Hour = date.getHours();
+        const Min = date.getMinutes();
+        console.log(Hour, Min);
 
 
-    console.log('Add message');
-    let elementMessage = document.createElement('div');
-    elementMessage.classList.add('message');
-    elementMessage.classList.add(position);
+        console.log('Add message');
+        let elementMessage = document.createElement('div');
+        elementMessage.classList.add('message');
+        elementMessage.classList.add(position);
 
-    let elementDetails = document.createElement('div');
-    elementDetails.classList.add('details');
+        let elementDetails = document.createElement('div');
+        elementDetails.classList.add('details');
 
-    let elementUsername = document.createElement('div');
-    elementUsername.classList.add('username');
-    elementUsername.innerHTML = userName;
-    elementDetails.appendChild(elementUsername);
+        let elementUsername = document.createElement('div');
+        elementUsername.classList.add('username');
+        elementUsername.innerHTML = userName;
+        elementDetails.appendChild(elementUsername);
 
-    let elementTime = document.createElement('div');
-    elementTime.classList.add('time');
-    elementTime.innerHTML = `${Hour}:${Min}`;
-    elementDetails.appendChild(elementTime);
+        let elementTime = document.createElement('div');
+        elementTime.classList.add('time');
+        elementTime.innerHTML = `${Hour}:${Min}`;
+        elementDetails.appendChild(elementTime);
 
-    elementMessage.appendChild(elementDetails);
+        elementMessage.appendChild(elementDetails);
 
-    let elementHr = document.createElement('hr');
-    elementMessage.appendChild(elementHr);
+        let elementHr = document.createElement('hr');
+        elementMessage.appendChild(elementHr);
 
-    let elementMsgText = document.createElement('div');
-    elementMsgText.classList.add('text');
-    elementMsgText.setAttribute("id", "msg-text");
-    elementMsgText.innerHTML = message;
-    elementMessage.appendChild(elementMsgText);
+        let elementMsgText = document.createElement('div');
+        elementMsgText.classList.add('text');
+        elementMsgText.setAttribute("id", "msg-text");
+        elementMsgText.innerHTML = message;
+        elementMessage.appendChild(elementMsgText);
 
-    displayMessage.appendChild(elementMessage);
+        displayMessage.appendChild(elementMessage);
 
-    if (position == 'msg-left') {
-        audio.play();
+        if (position == 'msg-left') {
+            audio.play();
+        }
+
+        displayMessage.scrollTop = displayMessage.scrollHeight - displayMessage.clientHeight;
     }
-
-    displayMessage.scrollTop = displayMessage.scrollHeight - displayMessage.clientHeight;
 }
 
 sendMsg.addEventListener('click', () => {

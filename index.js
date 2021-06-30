@@ -64,5 +64,5 @@ io.sockets.on('connection', socket => {
 
 });
 server.listen(port, () => {
-    console.log('listening on port');
+    console.log(`listening on port http://localhost:${port}`);
 });
