@@ -12,7 +12,7 @@ let loc1 = document.getElementById('location1');
 let loc2 = document.getElementById('location2');
 
 
-var audio = new Audio('ting.mp3');
+var audio = new Audio('/sound/ting.mp3');
 
 window.onload = function () {
     var url = document.location.href;

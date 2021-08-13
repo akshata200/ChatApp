@@ -10,37 +10,34 @@ const {
 } = require("socket.io");
 const io = new Server(server);
 
-// console.log('server io created');
 
 let userName;
 let roomNumber;
 
+// load static
+app.use('/css', express.static(path.resolve(__dirname, '/static/css')));
+app.use('/js', express.static(path.resolve(__dirname, '/static/js')));
+app.use('/image', express.static(path.resolve(__dirname, '/static/image')));
+app.use('/sound', express.static(path.resolve(__dirname, '/static/sound')));
 
 app.use(express.static(path.join(__dirname, '/static')));
 const users = [];
 
 app.get('/', (req, res) => {
-    // console.log('Successfully connected to Login.html');
     res.sendFile(path.join(__dirname + '/static/login.html'));
 });
 
 app.get('/chat', (req, res) => {
-    // console.log('Successfuly connected to chat.html');
     userName = req.query.username;
     roomNumber = req.query.roomNumber;
-    // console.log(userName, roomNumber);
     res.sendFile(path.join(__dirname + '/static/chat.html'));
 });
-// console.log(userName, roomNumber);
-console.log(typeof users)
 
-// Now here is for socket programming
-// I have declared 'users' above
+// Socket programming
 
 io.sockets.on('connection', socket => {
     socket.on('new-user-joined', () => {
         users[socket.id] = userName;
-        // console.log(users);
         socket.broadcast.emit('user-joined', userName);
     });
 

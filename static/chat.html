@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
-    <!-- <link rel="stylesheet" href="Style/chatStyle.css"> -->
-    <link rel="stylesheet" href="purple.css">
-    <link rel="icon" href="favicon.png">
+    <!-- Linking Css -->
+    <link rel="stylesheet" href="/css/purple.css">
+    <!-- Linking Favicon -->
+    <link rel="icon" href="/image/favicon.ico">
+    <!-- For sending Location -->
     <script defer src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
 
@@ -46,7 +48,7 @@
 
             </div>
             <div class="send">
-                <input type="text" class="text" id='messageInp' placeholder="Write a message...">
+                <input autocomplete="off" type="text" class="text" id='messageInp' placeholder="Write a message...">
                 <div class="button">
                     <button class='btn' id="sendMsg">Send</button>
                     <button class='btn btn-lg' id='location1' type="submit">Location</button>
@@ -56,9 +58,9 @@
         </div>
     </div>
     <!-- <script src="/nodeServer/index.js"></script> -->
-    <script src="change.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="client.js"></script>
+    <script src="/js/change.js"></script>
+    <script src="/js/client.js"></script>
 
 </body>
 
